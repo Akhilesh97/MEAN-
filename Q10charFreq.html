@@ -1,0 +1,27 @@
+<html>
+<head>
+<script>
+function findCharFreq(str){
+	var charFrequency = {};
+	Array.prototype.forEach.call(str, function(ch) {
+        charFrequency[ch] ? charFrequency[ch]++ : charFrequency[ch] = 1;
+    });
+    return charFrequency;
+}
+function driver(){
+	var str = document.getElementById("characters").value;
+//	document.getElementById('txt').innerHTML = a;	
+	console.log(findCharFreq(str));
+	var ch = findCharFreq(str);
+	for(var element in ch){
+		document.write("Character:",element,"Frequency:",ch[element],"<br/>");
+	}
+}
+</script>
+</head>
+<body>
+Enter a string<input type = "text" id = "characters">
+<input type = "submit" value = "findFreq" onclick = "driver()">
+<p id = "txt"></p>
+</body>
+</html>
