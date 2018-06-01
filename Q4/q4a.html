@@ -1,0 +1,41 @@
+<html>
+<head>
+<script src = "angular/angular.min.js"></script>
+<script>
+var app = angular.module("app",[]);
+app.controller("emp",["$scope",function($scope){
+	$scope.Name = "Akhil"
+	$scope.address = "Bengaluru"
+	$scope.company = "Intel-Indexer"
+	$scope.change = function(){	
+		$scope.Name = "new"
+		$scope.address = "address"
+	};
+	}]
+)
+		
+</script>
+</head>
+<body ng-app = "app">
+	<div ng-controller = "emp">
+		<!-- USE THIS FOR TWO WAY BINDING
+		<div>
+			Name is: {{Name}},
+			but can be changed
+			<input type = "text" ng-model = "Name"><br>
+			Address is: {{address}}
+			but can be changed
+			<input type = "text" ng-model = "address"><br>
+			Company is: <span ng-bind = "company"></span><br>
+			
+		</div> -->
+		<!--THIS IS ONE WAY BINDING-->
+		<div>
+			Initial Name is <span ng-bind = "Name"></span><br>
+			Initial Address is <span ng-bind = "address"></span><br>
+			Company is: <span ng-bind = "company"></span><br>
+		</div>
+		<button ng-click = "change()">Change</button>
+	</div>
+
+</body>
