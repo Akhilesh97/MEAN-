@@ -1,0 +1,36 @@
+<html>
+<script src = "angular/angular.min.js"></script>
+<body ng-app = "">
+<!--To display all update info
+Check the box to edit name<input type = "checkbox" ng-model = "myVar">
+Check the box to edit age<input type = "checkbox" ng-model = "myVar1">
+Check the box to edit usn<input type = "checkbox" ng-model = "myVar2">
+Check the box to edit gpa<input type = "checkbox" ng-model = "myVar3">
+<div ng-show = "myVar">
+Edit name:<input type = "text" name = "Name">
+<div ng-show = "myVar1">
+Edit age:<input type = "text" name = "age">
+<div ng-show = "myVar2">
+Edit usn:<input type = "text" name = "usn">
+<div ng-show = "myVar3">
+Edit grade:<input type = "text" name = "grade">
+-->
+Check the box to edit name<input type = "checkbox" ng-model = "myVar">
+Check the box to edit age<input type = "checkbox" ng-model = "myVar1">
+Check the box to edit usn<input type = "checkbox" ng-model = "myVar2">
+Check the box to edit gpa<input type = "checkbox" ng-model = "myVar3">
+<!-- To display only particular checkbox update -->
+<div ng-if = "myVar">
+Edit name:<input type = "text" name = "Name">
+</div>
+<div ng-if = "myVar1">
+Edit age:<input type = "text" name = "age">
+</div>
+<div ng-if = "myVar2">
+Edit usn:<input type = "text" name = "usn">
+</div>
+<div ng-if = "myVar3">
+Edit grade:<input type = "text" name = "grade">
+</div>
+</body>
+</html>
