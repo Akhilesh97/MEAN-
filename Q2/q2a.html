@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <script>
+        var func
+            function down1()
+            {
+                var s1 = document.getElementById("1").value;
+		var s2 = document.getElementById("2").value;
+		var s3 = document.getElementById("3").value;
+		var s4 = document.getElementById("4").value;
+		var s_1 = parseFloat(s1);
+		var s_2 = parseFloat(s2);
+		var s_3 = parseFloat(s3);
+		var s_4 = parseFloat(s4);		
+                function downa()
+                {   
+			var cgpa = (s_1+s_2+s_3+s_4)/4
+                    	alert("cgpa = "+cgpa)
+                }
+                return downa
+            }
+            function call_1()
+            { 
+                func=down1()
+                func()
+            }
+        </script>
+    </head>
+    <body>
+	<input type = "text" id = "1">1st Sem SGPA<br>
+	<input type = "text" id = "2">2nd Sem SGPA<br>
+	<input type = "text" id = "3">3rd Sem SGPA<br>
+	<input type = "text" id = "4">4th Sem SGPA<br>
+        <input type="button" value="callCGPA" onclick="call_1()"/>
+    </body>
+</html
