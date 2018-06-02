@@ -1,0 +1,12 @@
+{
+  "name": "q8a",
+  "version": "1.0.0",
+  "description": "q8a",
+  "main": "index.js",
+  "scripts": {
+    "test": "test" ,
+    "start":"nodejs index.js"
+  },
+  "author": "akhil",
+  "license": "ISC"
+}
