@@ -1,0 +1,50 @@
+<html>
+<head>
+<script src = "angular/angular.min.js"></script>
+</head>
+<body>
+<form ng-app="myApp" ng-controller="validateCtrl" 
+name="myForm" novalidate>
+
+<p>Username:
+<input type="text" name="user" ng-model="user" required>
+<span style="color:red" ng-show="myForm.user.$dirty && myForm.user.$invalid">
+<span ng-show="myForm.user.$error.required">Username is required.</span>
+</span>
+</p>
+<p>
+Enter Middle Name<input type="text" name="mname" ng-model="mname" ng-minlength="2" required>
+<span style="color:red" ng-show="myForm.mname.$dirty && myForm.mname.$invalid">Middle Name must be atleast 2 characters
+<span ng-show="myForm.mname.$error.required">This field is required</span><br>
+</span>
+</p>
+Enter Company<input type="text" name="cname" ng-model="cname" ng-maxlength="15" required>
+<span style="color:red" ng-show="myForm.cname.$dirty && myForm.cname.$invalid">Company Name must not exceed 15 characters
+<span ng-show="myForm.cname.$error.required">This field is required</span><br>
+</span>
+</p>
+<p>
+Mobile No <input type = "text" name = "mno" ng-model = "mno" required maxlength="10" ng-pattern="/^[7-9][0-9]{9}$/">
+ <span style="color:red" ng-show="myForm.mno.$dirty && myForm.mno.$invalid" class="ng-hide">   
+                   Please Enter Valid  Mobile No.!  
+               
+<span ng-show="myForm.mno.$error.required">This field is required</span> </span> <br>
+</p>
+<p>
+<input type="submit"
+ng-disabled="myForm.user.$dirty && myForm.user.$invalid ||  
+myForm.email.$dirty && myForm.email.$invalid">
+</p>
+</form>
+<script>
+var app = angular.module('myApp', []);
+app.controller('validateCtrl', function($scope) {
+    $scope.user = 'Name Mandatory';
+    $scope.mname = 'Must have atleast 2 chars';
+    $scope.mno = 'Must be proper format'; 
+    $scope.cname = 'Must not exceed 15 chars';
+    //$scope.email = 'john.doe@gmail.com';
+});
+</script>
+</body>
+</html>
