@@ -1,0 +1,26 @@
+<html>
+<head>
+<script src = "angular/angular.min.js"></script>
+</head>
+<body ng-app = "">
+Books
+<select ng-model = "myVar">
+<option value = "book1">BOOK1
+<option value = "book2">BOOK2
+<option value = "book3">BOOK3
+</select>
+<hr>
+<div ng-switch = "myVar">
+<div ng-switch-when = "book1">
+<h1>MY FAV BOOK1</h1>
+</div>
+<div ng-switch-when = "book2">
+<h1>MY FAV BOOK2</h1>
+</div>
+<div ng-switch-when = "book3">
+<h1>MY FAV BOOK3</h1>
+</div>
+</div>
+<hr>
+</body>
+</html>
