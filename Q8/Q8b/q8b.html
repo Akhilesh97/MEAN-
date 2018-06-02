@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<script src="angular/angular.min.js"></script>  
+<body ng-app="myApp">
+
+<p>Try writing in the input field:</p>
+
+<form name="myForm">
+<input name="myInput" ng-model="myInput" required my-directive>
+</form>
+
+<p>The input's valid state is:</p>
+<h1 ng-message = "my-directive">{{myForm.myInput.$valid}}</h1>
+
+<script>
+var app = angular.module('myApp', []);
+app.directive('myDirective', function() {
+    return {
+        require: 'ngModel',
+        link: function(scope, element, attr, mCtrl) {
+		var pass_array = ["password", "passw0rd", "mypassword"]
+		
+            function myValidation(value) {
+                if (pass_array.indexOf(value)==-1) {
+                    mCtrl.$setValidity('charE', true);
+                } else {
+                    mCtrl.$setValidity('charE', false);
+			alert("COmman")
+                }
+                return value;
+            }
+            mCtrl.$parsers.push(myValidation);
+        
+        }
+    };
+});
+</script>
+
+<p>The input field must not contain common password to be consider valid.</p>
+
+</body>
+</html>
