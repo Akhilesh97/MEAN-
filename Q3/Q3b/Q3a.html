@@ -1,0 +1,61 @@
+<html>
+<head>
+<script>
+		function Calculator(x,y){
+			this.a = x;
+			this.b = y;
+
+		}
+		
+		Calculator.prototype.add = function(){
+			alert(a+b);
+		}
+		Calculator.prototype.subtract = function(){
+			alert(a-b);
+		}
+		Calculator.prototype.multiply = function(){
+			alert(a*b);
+		}
+		Calculator.prototype.divide = function(){
+			if(b != 0){
+				alert(a/b);
+			}
+			else{
+				alert("divide by 0!");
+			}
+		}
+		function add_driver(){
+			a = parseInt(document.getElementById('n1').value);
+			b = parseInt(document.getElementById('n2').value);
+			var calc = new Calculator(a,b)
+			calc.add()
+		}
+		function sub_driver(){
+			a = parseInt(document.getElementById('n1').value);
+			b = parseInt(document.getElementById('n2').value);
+			var calc = new Calculator(a,b)
+			calc.subtract()
+		}
+		function mul_driver(){
+			a = parseInt(document.getElementById('n1').value);
+			b = parseInt(document.getElementById('n2').value);
+			var calc = new Calculator(a,b)
+			calc.multiply()
+		}
+		function div_driver(){
+			a = parseInt(document.getElementById('n1').value);
+			b = parseInt(document.getElementById('n2').value);
+			var calc = new Calculator(a,b)
+			calc.divide()
+		}
+</script>
+</head>
+<body>
+Enter 1st number<input type = 'text' id = 'n1'><br>
+Enter 2nd number<input type = 'text' id = 'n2'><br>
+<button value = '+' name = 'op' onclick = 'add_driver()'>+</button><br>
+<button value = '-' name = 'op' onclick = 'sub_driver()'>-</button><br>
+<button value = '*' name = 'op' onclick = 'mul_driver()'>*</button><br>
+<button value = '/' name = 'op' onclick = 'div_driver()'>/</button><br>
+</body>
+</html>
