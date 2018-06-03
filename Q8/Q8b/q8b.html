@@ -10,8 +10,9 @@
 </form>
 
 <p>The input's valid state is:</p>
-<h1 ng-message = "my-directive">{{myForm.myInput.$valid}}</h1>
-
+<!--<span ng-message = "myDirective">{{myForm.myInput.$valid}}</span>-->
+<p ng-message="myDirective" ng-show="myForm.myInput.$valid">good</p>
+<p ng-message="myDirective" ng-show="myForm.myInput.$invalid">common</p>
 <script>
 var app = angular.module('myApp', []);
 app.directive('myDirective', function() {
@@ -23,9 +24,13 @@ app.directive('myDirective', function() {
             function myValidation(value) {
                 if (pass_array.indexOf(value)==-1) {
                     mCtrl.$setValidity('charE', true);
+		    
+	
                 } else {
                     mCtrl.$setValidity('charE', false);
-			alert("COmman")
+		    alert("Password is common");
+	            
+			
                 }
                 return value;
             }
